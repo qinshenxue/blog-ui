@@ -1,0 +1,44 @@
+
+.vui-radio 
+    cursor: pointer;
+    .vui-radio-input 
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        position: relative;
+        vertical-align: middle;
+        line-height: 1;
+    
+    .vui-radio-label
+        display: inline-block;
+        vertical-align: middle;
+    
+
+    &.checked 
+        .vui-radio-input 
+            border-color: $color-theme;
+            background: $color-theme;
+            &:before 
+                position: absolute;
+                top: 4px;
+                right: 4px;
+                bottom: 4px;
+                left: 4px;
+                background: #fff;
+                content: '';
+                border-radius: 50%;
+
+    input 
+        opacity: 0;
+        outline: none;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+    
+

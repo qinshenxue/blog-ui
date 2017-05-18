@@ -1,0 +1,84 @@
+
+.vui-select 
+    position: relative
+
+    &.multiple.has-values .vui-select-selected 
+        padding-bottom: 2px
+    
+
+    .vui-select-selected 
+        border: 1px solid #ccc
+        padding: 6px 10px
+        .placeholder 
+            color: #999
+        
+        .icon-caret
+            position: absolute
+            top: 50%
+            right: 10px
+            height: 12px
+            width: 12px
+            fill: #999
+            margin-top: -6px
+            transition: transform 200ms
+        
+    
+
+    .vui-select-selected-item 
+        border: 1px solid $color-theme
+        display: inline-block
+        padding: 4px
+        margin: 0 4px 4px 0
+        color: $color-theme
+        .icon-close 
+            fill: $color-theme
+            cursor: pointer
+            vertical-align: -2px
+        
+    
+
+    .vui-select-options 
+        position: absolute
+        border: 1px solid $color-theme
+        left: 0
+        width: 100%
+        z-index: 1
+        background: #fff
+        &.vue-select-options-bottom 
+            top: 100%
+            border-top: 0
+            box-shadow: 0 3px 5px rgba(0,0,0,.2)
+        
+        &.vue-select-options-top 
+            border-bottom: 0
+            bottom: 100%
+            box-shadow: 0 -3px 5px rgba(0,0,0,.2)
+        
+    
+    .vui-select-option 
+        padding: 7px 10px
+        cursor: pointer
+        &:hover 
+            background-color: #eee
+        
+        &.selected 
+            color: $color-theme
+        
+        .icon-check 
+            float: right
+            fill: $color-theme
+            width: 20px
+            height: 20px
+        
+    
+
+    &.active 
+        .vui-select-selected 
+            border-color: $color-theme
+            .icon-caret
+                fill: $color-theme
+                transform: rotate(180deg)
+            
+        
+    
+

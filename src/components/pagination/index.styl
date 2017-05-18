@@ -1,0 +1,42 @@
+.vui-pagination
+  font-size 0
+
+.vui-pagination-total
+  font-size 14px
+
+.vui-pagination-list
+  float right
+  user-select none
+  li
+    display inline-block
+    vertical-align top
+    padding 6px 5px
+    margin-left 5px
+    border 1px solid $color-gray
+    font-size 14px
+    min-width 28px
+    line-height 1
+    cursor pointer
+    text-align center
+    &:hover
+      color #fff
+      border-color $color-theme-light
+      background $color-theme-light
+    &.active
+      color #fff
+      border-color $color-theme
+      background $color-theme
+    &:active
+      color #fff
+      border-color $color-theme-dark
+      background $color-theme-dark
+    &.ellipsis
+      border-color transparent
+    &.disabled
+      color $color-disabled
+      border-color $color-disabled
+      background #fff
+      cursor not-allowed
+        
+    
+

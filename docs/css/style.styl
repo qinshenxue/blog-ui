@@ -1,0 +1,161 @@
+@import "../../src/css/vars.styl"
+
+@import "../../src/css/style.styl"
+
+@import "../../node_modules/highlight.js/styles/github.css"
+
+body
+    background: #fff
+
+.doc-container
+    background: #fff
+    box-shadow: rgba(0, 0, 0, .05) 0 0 8px
+
+.v-portal_north .top
+    background: $color-theme
+    height 100%
+    .logo
+        font-size: 22px
+        color: #fff
+        img
+            height: 40px
+            vertical-align: middle
+    .logo-txt
+        font-weight bold
+        font-style: italic
+        font-size: 32px
+        color: #fff
+
+.menu-wrap
+    height 100%
+    position: relative
+    overflow auto
+    background #f6f6f6
+    padding-bottom 20px
+    border-right 1px solid $color-border
+    .component-group
+        padding 20px 0 10px 20px
+    .component-item
+        display block
+        padding-left 40px
+        line-height 34px
+        text-decoration none
+        color #333
+        &:hover
+            background #eee
+        &.router-link-active
+            color: $color-theme
+            background $color-border
+
+.doc-box
+    padding: 20px 50px 60px 50px
+    .doc-title
+        @extend h2
+        margin-top: 0
+        border-bottom: 1px solid #e6e6e6
+        padding-bottom: 5px
+        color $color-title
+    .doc-subtitle
+        @extend h3
+        color #666
+        margin-top: 30px
+
+.doc-table
+    width 100%
+    border-spacing 0
+    border-collapse collapse
+    table-layout: fixed
+    td
+    th
+        padding 10px
+    th
+        font-weight normal
+        text-align left
+        background lighten($color-theme-light, 90%)
+    td
+        word-wrap break-word
+        border-bottom 1px solid lighten($color-theme-light, 80%)
+
+.doc-inlinecode
+    @extend code
+    display: inline-block
+    padding: 3px 5px
+    margin: 1px
+    border-radius: 2px
+    color: #c7254e
+    font-size: 13px
+    background-color: #f9f2f4
+
+.doc-basic-color
+    .color-block
+        height 80px
+        line-height @height
+        color rgba(#fff, .18)
+        padding-left: 20px;
+        font-size 40px
+        font-weight bold
+    .color-theme-light
+        background $color-theme-light
+    .color-theme-dark
+        background $color-theme-dark
+    .color-theme
+        background $color-theme
+    .color-success
+        background $color-success
+    .color-warning
+        background $color-warning
+    .color-danger
+        background $color-danger
+
+.doc-basic-font
+    .font-box
+        line-height 4em
+        text-align center
+        border 1px solid #ddd
+
+.doc-basic-grid
+    .row
+        margin-bottom: 15px
+    .content
+        font-size: 12px
+        text-align: center
+        line-height: 38px
+        background: #eee
+        border: 1px solid #ddd
+
+.doc-basic-icon
+    .ico-item
+        padding 10px 0
+        text-align center
+    .icon
+        width 32px
+        height 32px
+        transition 0.3s
+        fill currentColor
+        &:hover
+            transform scale(2)
+    .ico-name
+        color $color-assist
+        font-size 12px
+
+// form
+.doc-form-input
+    .output
+        line-height: 34px
+
+.doc-data-pagination
+    .vui-pagination
+        margin-top 20px
+    .table
+        width 100%
+        table-layout fixed
+        border-spacing 0
+        th
+        td
+            text-align center
+            padding 10px 20px
+            border-bottom 1px solid $color-gray-light
+        tr
+            background #f8f8f8
+        tr:nth-child(even)
+            background #f4f4f4

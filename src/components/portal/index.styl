@@ -1,0 +1,23 @@
+$portal-north-height = 80px
+$portal-west-width = 200px
+
+.v-portal
+    &_north
+        position fixed
+        top 0
+        left 0
+        height $portal-north-height
+        width 100%
+    &_west
+        position fixed
+        top $portal-north-height
+        bottom 0
+        left 0
+        width $portal-west-width
+    &_center
+        position absolute
+        top $portal-north-height
+        bottom 0
+        left $portal-west-width
+        right 0
+        overflow auto

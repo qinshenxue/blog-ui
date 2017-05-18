@@ -1,0 +1,74 @@
+.btn
+    display inline-block
+    border 0
+    outline none
+    padding 9px 15px
+    cursor pointer
+    border-radius 4px
+    font-family inherit
+    font-size inherit
+    user-selet none
+    -webkit-appearance none
+    border 1px solid $color-gray
+    background #fff
+    line-height 1
+    &:hover
+        background $color-gray-light
+    &:active
+        background $color-gray-dark
+    &[disabled]
+        background $color-gray-dark
+        color $color-assist
+        border-color $color-gray
+        cursor not-allowed
+        &:hover
+        &:active
+            @extend .btn[disabled]
+        
+.btn-primary
+.btn-success
+.btn-warning
+.btn-danger
+    color #fff
+.btn-primary
+    background $color-theme
+    border-color $color-theme
+    &:hover
+        background $color-theme-light
+        border-color $color-theme-light
+    &:active
+        background $color-theme-dark
+        border-color $color-theme-dark
+.btn-success
+    background $color-success
+    border-color $color-success
+    &:hover
+        background $color-success-light
+        border-color $color-success-light
+    &:active
+        background $color-success-dark
+        border-color $color-success-dark
+.btn-warning
+    background $color-warning
+    border-color $color-warning
+    &:hover
+        background $color-warning-light
+        border-color $color-warning-light
+    &:active
+        background $color-warning-dark
+        border-color $color-warning-dark
+.btn-danger
+    background $color-danger
+    border-color $color-danger
+    &:hover
+        background $color-danger-light
+        border-color $color-danger-light
+    &:active
+        background $color-danger-dark
+        border-color $color-danger-dark
+
+
+.btn-sm
+    padding 6px 10px
+.btn-lg
+    padding 12px 19px
