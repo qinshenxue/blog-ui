@@ -82,6 +82,9 @@
                     },{
                         name: 'upload',
                         path: '/other/upload'
+                    },{
+                        name: 'comment',
+                        path: '/other/comment'
                     }]
                 }]
             }

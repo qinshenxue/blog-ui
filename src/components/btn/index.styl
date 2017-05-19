@@ -1,14 +1,12 @@
-.btn
+.v-btn
     display inline-block
-    border 0
     outline none
     padding 9px 15px
     cursor pointer
-    border-radius 4px
+    border-radius 3px
     font-family inherit
     font-size inherit
-    user-selet none
-    -webkit-appearance none
+    user-select none
     border 1px solid $color-gray
     background #fff
     line-height 1
@@ -23,14 +21,14 @@
         cursor not-allowed
         &:hover
         &:active
-            @extend .btn[disabled]
+            @extend .v-btn[disabled]
         
-.btn-primary
-.btn-success
-.btn-warning
-.btn-danger
+.v-btn_primary
+.v-btn_success
+.v-btn_warning
+.v-btn_danger
     color #fff
-.btn-primary
+.v-btn_primary
     background $color-theme
     border-color $color-theme
     &:hover
@@ -39,7 +37,7 @@
     &:active
         background $color-theme-dark
         border-color $color-theme-dark
-.btn-success
+.v-btn_success
     background $color-success
     border-color $color-success
     &:hover
@@ -48,7 +46,7 @@
     &:active
         background $color-success-dark
         border-color $color-success-dark
-.btn-warning
+.v-btn_warning
     background $color-warning
     border-color $color-warning
     &:hover
@@ -57,7 +55,7 @@
     &:active
         background $color-warning-dark
         border-color $color-warning-dark
-.btn-danger
+.v-btn_danger
     background $color-danger
     border-color $color-danger
     &:hover
@@ -68,7 +66,7 @@
         border-color $color-danger-dark
 
 
-.btn-sm
+.v-btn_sm
     padding 6px 10px
-.btn-lg
+.v-btn_lg
     padding 12px 19px

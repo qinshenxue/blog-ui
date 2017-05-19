@@ -44,7 +44,10 @@ a {
 
 a:hover, a:focus {
   color: @theme-dark20;
-  text-decoration: underline;
+}
+
+a:hover {
+  border-bottom: 1px solid @theme;
 }
 
 .pull-left {
@@ -64,9 +67,10 @@ a:hover, a:focus {
   }
 }
 
-input,button,textarea {
+input, button, textarea {
   font-family: inherit;
 }
+
 // 栅格系统
 .container {
   margin-right: auto;

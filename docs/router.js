@@ -16,6 +16,7 @@ const routes= [
     { path: '/data/tree', component:require('./views/data/tree.vue')  },
     { path: '/other/lightgallery', component:require('./views/other/lightgallery.vue')  },
     { path: '/other/upload', component:require('./views/other/upload.vue')  },
+    { path: '/other/comment', component:require('./views/other/comment.vue')  },
 
 
 ];
