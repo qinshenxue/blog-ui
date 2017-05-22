@@ -11,6 +11,7 @@ Vue.use(VueRouter);
 Vue.use(Vui);
 Vue.use(Doc);
 const router = new VueRouter({
+    linkActiveClass:'active',
     routes 
 })
 const app = new Vue({

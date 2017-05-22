@@ -16,7 +16,7 @@ import portal from './components/portal/index.vue';
 import upload from './components/upload/index.vue';
 
 import comment from './components/comment/index.vue';
-import nav from './components/nav/index.vue';
+import topbar from './components/topbar/index.vue';
 
 // import pagination from './pagination/pagination.vue';
 // import tree from './tree/tree.vue';
@@ -39,7 +39,8 @@ const vui = {
     radio,
     pagination,
     portal,
-    upload
+    upload,
+    topbar
 };
 
 const install = function (Vue) {
@@ -61,7 +62,7 @@ const install = function (Vue) {
     Vue.component(portal.name, portal);
     Vue.component(upload.name, upload);
     Vue.component(comment.name, comment);
-    Vue.component(nav.name, nav);
+    Vue.component(topbar.name, topbar);
 
     //   Vue.component('VuiPagination', pagination);
     //    Vue.component('VuiTree', tree);

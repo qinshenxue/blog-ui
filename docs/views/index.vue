@@ -1,8 +1,15 @@
 <template>
     <div class="vui-doc">
-        <v-nav></v-nav>
+        <v-topbar>
+            <template slot="links">
+                <router-link to="/basic/color">组件</router-link>
+                <router-link :to="{path:'/article',query:{full:1}}">文章</router-link>
+                <a href="#">酷站</a>
+            </template>
+        </v-topbar>
         <div class="container">
-            <v-row>
+            <router-view v-if="$route.query.full"></router-view>
+            <v-row v-else>
                 <v-col :sm="5">
                     <div class="menu-wrap">
                         <ul>
@@ -90,9 +97,6 @@
                     }, {
                         name: 'comment',
                         path: '/other/comment'
-                    }, {
-                        name: 'nav',
-                        path: '/other/nav'
                     }]
                 }]
             }

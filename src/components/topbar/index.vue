@@ -1,16 +1,15 @@
 <template>
-    <div class="v-nav">
+    <div class="v-topbar">
         <div class="container">
-            <div class="v-nav_left">
-                <div class="v-nav_logo">
+            <div class="v-topbar_left">
+                <div class="v-topbar_logo">
                     <img src="../../images/vue.png" alt="logo">
                     UI for BLOG
                 </div>
             </div>
-            <div class="v-nav_right">
-                <div class="v-nav_links">
-                    <a href="javascript:;" class="active">导航</a>
-                    <a href="javascript:;">导航</a>
+            <div class="v-topbar_right">
+                <div class="v-topbar_links">
+                    <slot name="links"></slot>
                 </div>
             </div>
         </div>
@@ -18,23 +17,23 @@
 </template>
 <script>
     export default{
-        name: 'v-nav'
+        name: 'v-topbar'
     }
 </script>
 <style lang="stylus">
     @import "../../css/vars.styl"
-    .v-nav
+    .v-topbar
         background #f4f4f4
         height 100%
         .container
             display flex
             height @height
 
-    .v-nav_left
+    .v-topbar_left
         display flex
         flex 1
 
-    .v-nav_links
+    .v-topbar_links
         display flex
         align-items center
         height 100%
@@ -42,13 +41,14 @@
             display flex
             align-items center
             height @height
-            padding 0 10px
+            padding 0 15px
             margin 0 10px
             text-decoration none
+            border-bottom 2px solid transparent
             &.active
-                border-bottom 2px solid $color-theme
+                border-color $color-theme
 
-    .v-nav_logo
+    .v-topbar_logo
         display flex
         align-items center
         padding 0 20px
