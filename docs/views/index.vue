@@ -1,23 +1,28 @@
 <template>
-    <v-portal class="vui-doc">
-        <div slot="north" class="top">
-            <div class="logo pull-left"><img src="../images/vue.png"></div>
-            <div class="pull-right logo-txt">VUI</div>
+    <div class="vui-doc">
+        <v-nav></v-nav>
+        <div class="container">
+            <v-row>
+                <v-col :sm="5">
+                    <div class="menu-wrap">
+                        <ul>
+                            <li v-for="group in groups">
+                                <div class="component-group">{{group.groupName}}</div>
+                                <ul>
+                                    <li v-for="comp in group.components">
+                                        <router-link class="component-item" :to="comp.path">{{comp.name}}</router-link>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </v-col>
+                <v-col :sm="19">
+                    <router-view></router-view>
+                </v-col>
+            </v-row>
         </div>
-        <div slot="west" class="menu-wrap">
-            <ul>
-                <li v-for="group in groups">
-                    <div class="component-group">{{group.groupName}}</div>
-                    <ul>
-                        <li v-for="comp in group.components">
-                            <router-link class="component-item" :to="comp.path">{{comp.name}}</router-link>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <router-view></router-view>
-    </v-portal>
+    </div>
 </template>
 <script type="text/javascript">
     export default {
@@ -79,12 +84,15 @@
                     components: [{
                         name: 'lightgallery',
                         path: '/other/lightgallery'
-                    },{
+                    }, {
                         name: 'upload',
                         path: '/other/upload'
-                    },{
+                    }, {
                         name: 'comment',
                         path: '/other/comment'
+                    }, {
+                        name: 'nav',
+                        path: '/other/nav'
                     }]
                 }]
             }

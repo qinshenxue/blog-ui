@@ -11,30 +11,17 @@ body
     background: #fff
     box-shadow: rgba(0, 0, 0, .05) 0 0 8px
 
-.v-portal_north .top
-    background: $color-theme
-    height 100%
-    .logo
-        font-size: 22px
-        color: #fff
-        img
-            height: 40px
-            vertical-align: middle
-    .logo-txt
-        font-weight bold
-        font-style: italic
-        font-size: 32px
-        color: #fff
+.vui-doc .v-nav
+    height 80px
 
 .menu-wrap
     height 100%
     position: relative
     overflow auto
-    background #f6f6f6
     padding-bottom 20px
-    border-right 1px solid $color-border
     .component-group
-        padding 20px 0 10px 20px
+        padding 20px 0 10px 10px
+        border-bottom 1px solid #eee
     .component-item
         display block
         padding-left 40px
@@ -44,19 +31,19 @@ body
         &:hover
             background #eee
         &.router-link-active
-            color: $color-theme
-            background $color-border
+            color: #fff
+            background $color-theme
 
 .doc-box
-    padding: 20px 50px 60px 50px
+    padding: 20px
     .doc-title
-        @extend h2
+        @extend h3
         margin-top: 0
         border-bottom: 1px solid #e6e6e6
         padding-bottom: 5px
         color $color-title
     .doc-subtitle
-        @extend h3
+        @extend h4
         color #666
         margin-top: 30px
 

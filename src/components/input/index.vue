@@ -18,19 +18,19 @@
         <div class="v-input_icon" v-if="$slots.icon">
             <slot name="icon"></slot>
         </div>
-        <input class="v-input_inner"
+        <input v-if="type!=='textarea'"
+               class="v-input_inner"
                ref="input"
                type="text"
                :value="currentValue"
-               :placeholder="placeholder"
-               :disabled="disabled"
-               :readonly="readonly"
-               :maxlength="maxlength"
-               :minlength="minlength"
-               :autocomplete="autocomplete"
-               :autofocus="autofocus"
+               v-bind="$props"
                @input="handleInput">
-
+        <textarea v-else
+                  class="v-input_inner"
+                  ref="input"
+                  :value="currentValue"
+                  v-bind="$props"
+                  @input="handleInput"></textarea>
     </div>
 
 </template>
@@ -49,7 +49,8 @@
             autofocus: Boolean,
             autocomplete: Boolean,
             minlength: Number,
-            maxlength: Number
+            maxlength: Number,
+            rows: Number
         },
         data(){
             return {

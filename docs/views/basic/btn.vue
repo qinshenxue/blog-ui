@@ -5,56 +5,56 @@
 
                 <doc-title sub>默认大小</doc-title>
                 <div>
-                        <vui-btn>default</vui-btn>
-                        <vui-btn type="primary">primary</vui-btn>
-                        <vui-btn type="success">success</vui-btn>
-                        <vui-btn type="warning">warning</vui-btn>
-                        <vui-btn type="danger">danger</vui-btn>
-                        <vui-btn disabled>disabled</vui-btn>
+                        <v-btn>default</v-btn>
+                        <v-btn type="primary">primary</v-btn>
+                        <v-btn type="success">success</v-btn>
+                        <v-btn type="warning">warning</v-btn>
+                        <v-btn type="danger">danger</v-btn>
+                        <v-btn disabled>disabled</v-btn>
                 </div>
 
-                <doc-code><pre><code>&lt;vui-btn&gt;default&lt;/vui-btn&gt;
-&lt;vui-btn type=&quot;primary&quot;&gt;primary&lt;/vui-btn&gt;
-&lt;vui-btn type=&quot;success&quot;&gt;success&lt;/vui-btn&gt;
-&lt;vui-btn type=&quot;warning&quot;&gt;warning&lt;/vui-btn&gt;
-&lt;vui-btn type=&quot;danger&quot;&gt;danger&lt;/vui-btn&gt;
-&lt;vui-btn disabled&gt;disabled&lt;/vui-btn&gt;</code></pre></doc-code>
+                <doc-code><pre><code>&lt;v-btn&gt;default&lt;/v-btn&gt;
+&lt;v-btn type=&quot;primary&quot;&gt;primary&lt;/v-btn&gt;
+&lt;v-btn type=&quot;success&quot;&gt;success&lt;/v-btn&gt;
+&lt;v-btn type=&quot;warning&quot;&gt;warning&lt;/v-btn&gt;
+&lt;v-btn type=&quot;danger&quot;&gt;danger&lt;/v-btn&gt;
+&lt;v-btn disabled&gt;disabled&lt;/v-btn&gt;</code></pre></doc-code>
 
 
                 <h3>小按钮（sm）</h3>
                 <div>
-                        <vui-btn sm>default</vui-btn>
-                        <vui-btn type="primary" sm>primary</vui-btn>
-                        <vui-btn type="success" sm>success</vui-btn>
-                        <vui-btn type="warning" sm>warning</vui-btn>
-                        <vui-btn type="danger" sm>danger</vui-btn>
-                        <vui-btn disabled sm>disabled</vui-btn>
+                        <v-btn sm>default</v-btn>
+                        <v-btn type="primary" sm>primary</v-btn>
+                        <v-btn type="success" sm>success</v-btn>
+                        <v-btn type="warning" sm>warning</v-btn>
+                        <v-btn type="danger" sm>danger</v-btn>
+                        <v-btn disabled sm>disabled</v-btn>
                 </div>
 
 
-                <doc-code><pre><code>&lt;vui-btn sm&gt;default&lt;/vui-btn&gt;
-&lt;vui-btn type=&quot;primary&quot; sm&gt;primary&lt;/vui-btn&gt;
-&lt;vui-btn type=&quot;success&quot; sm&gt;success&lt;/vui-btn&gt;
-&lt;vui-btn type=&quot;warning&quot; sm&gt;warning&lt;/vui-btn&gt;
-&lt;vui-btn type=&quot;danger&quot; sm&gt;danger&lt;/vui-btn&gt;
-&lt;vui-btn disabled sm&gt;disabled&lt;/vui-btn&gt;</code></pre></doc-code>
+                <doc-code><pre><code>&lt;v-btn sm&gt;default&lt;/v-btn&gt;
+&lt;v-btn type=&quot;primary&quot; sm&gt;primary&lt;/v-btn&gt;
+&lt;v-btn type=&quot;success&quot; sm&gt;success&lt;/v-btn&gt;
+&lt;v-btn type=&quot;warning&quot; sm&gt;warning&lt;/v-btn&gt;
+&lt;v-btn type=&quot;danger&quot; sm&gt;danger&lt;/v-btn&gt;
+&lt;v-btn disabled sm&gt;disabled&lt;/v-btn&gt;</code></pre></doc-code>
 
                 <h3>大按钮（lg）</h3>
                 <div>
-                        <vui-btn lg>default</vui-btn>
-                        <vui-btn type="primary" lg>primary</vui-btn>
-                        <vui-btn type="success" lg>success</vui-btn>
-                        <vui-btn type="warning" lg>warning</vui-btn>
-                        <vui-btn type="danger" lg>danger</vui-btn>
-                        <vui-btn disabled lg>disabled</vui-btn>
+                        <v-btn lg>default</v-btn>
+                        <v-btn type="primary" lg>primary</v-btn>
+                        <v-btn type="success" lg>success</v-btn>
+                        <v-btn type="warning" lg>warning</v-btn>
+                        <v-btn type="danger" lg>danger</v-btn>
+                        <v-btn disabled lg>disabled</v-btn>
                 </div>
 
-                <doc-code><pre><code>&lt;vui-btn lg&gt;default&lt;/vui-btn&gt;
-&lt;vui-btn type=&quot;primary&quot; lg&gt;primary&lt;/vui-btn&gt;
-&lt;vui-btn type=&quot;success&quot; lg&gt;success&lt;/vui-btn&gt;
-&lt;vui-btn type=&quot;warning&quot; lg&gt;warning&lt;/vui-btn&gt;
-&lt;vui-btn type=&quot;danger&quot; lg&gt;danger&lt;/vui-btn&gt;
-&lt;vui-btn disabled lg&gt;disabled&lt;/vui-btn&gt;</code></pre></doc-code>
+                <doc-code><pre><code>&lt;v-btn lg&gt;default&lt;/v-btn&gt;
+&lt;v-btn type=&quot;primary&quot; lg&gt;primary&lt;/v-btn&gt;
+&lt;v-btn type=&quot;success&quot; lg&gt;success&lt;/v-btn&gt;
+&lt;v-btn type=&quot;warning&quot; lg&gt;warning&lt;/v-btn&gt;
+&lt;v-btn type=&quot;danger&quot; lg&gt;danger&lt;/v-btn&gt;
+&lt;v-btn disabled lg&gt;disabled&lt;/v-btn&gt;</code></pre></doc-code>
 
 
                 <doc-title sub>配置说明</doc-title>

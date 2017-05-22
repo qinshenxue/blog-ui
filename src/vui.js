@@ -16,6 +16,7 @@ import portal from './components/portal/index.vue';
 import upload from './components/upload/index.vue';
 
 import comment from './components/comment/index.vue';
+import nav from './components/nav/index.vue';
 
 // import pagination from './pagination/pagination.vue';
 // import tree from './tree/tree.vue';
@@ -46,8 +47,8 @@ const install = function (Vue) {
      Vue.component(key, iview[key])
      });*/
     Vue.component(icon.name, icon);
-    Vue.component('VuiCol', col);
-    Vue.component('VuiRow', row);
+    Vue.component(col.name, col);
+    Vue.component(row.name, row);
     Vue.component(btn.name, btn);
 
     Vue.component(input.name, input);
@@ -60,6 +61,7 @@ const install = function (Vue) {
     Vue.component(portal.name, portal);
     Vue.component(upload.name, upload);
     Vue.component(comment.name, comment);
+    Vue.component(nav.name, nav);
 
     //   Vue.component('VuiPagination', pagination);
     //    Vue.component('VuiTree', tree);

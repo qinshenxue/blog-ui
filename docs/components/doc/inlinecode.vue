@@ -1,1 +1,0 @@
-<template><span class="doc-inlinecode"><slot></slot></span></template>

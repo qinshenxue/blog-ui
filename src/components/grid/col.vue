@@ -5,6 +5,7 @@
 </template>
 <script type="text/javascript">
     export default {
+        name: 'v-col',
         props: {
             span: Number,
             offset: Number,
@@ -13,8 +14,7 @@
             xs: [Number, Object],
             sm: [Number, Object],
             md: [Number, Object],
-            lg: [Number, Object],
-            xl: [Number, Object]
+            lg: [Number, Object]
         },
         computed: {
             gutter() {
@@ -24,11 +24,12 @@
                 var cls = [];
                 ['span', 'offset', 'push', 'pull'].forEach(prop => {
                     if (this[prop]) {
+                        console.log(this[prop]);
                         cls.push(prop === 'span' ? `col-${this[prop]}` : `col-${prop}-${this[prop]}`);
                     }
                 });
 
-                ['xs', 'sm', 'md', 'lg', 'xl'].forEach(screen => {
+                ['xs', 'sm', 'md', 'lg'].forEach(screen => {
                     var size = this[screen];
                     if (typeof size === 'number') {
                         cls.push(`col-${screen}-${size}`);

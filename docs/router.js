@@ -17,7 +17,7 @@ const routes= [
     { path: '/other/lightgallery', component:require('./views/other/lightgallery.vue')  },
     { path: '/other/upload', component:require('./views/other/upload.vue')  },
     { path: '/other/comment', component:require('./views/other/comment.vue')  },
-
+    { path: '/other/nav', component:require('./views/other/nav.vue')  },
 
 ];
 

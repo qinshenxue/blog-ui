@@ -2,6 +2,8 @@
 .container
     margin-right auto
     margin-left auto
+    padding-left 15px
+    padding-right 15px
     @extend .clearfix
 
 .row
@@ -17,16 +19,13 @@ for i in 0..$grid-columns
     $percent = col-percent(i)
     if i!=0
         .col-{i}    // 超小屏幕
-        .col-xs-{i}
+            float left
             width $percent
     .col-offset-{i}    // 栅格左侧的间隔
-    .col-xs-offset-{i}
         margin-left $percent
     .col-push-{i}    // 栅格向左移动
-    .col-xs-push-{i}
         left $percent
-    .col-pull-{i}
-    .col-xs-pull-{i}    // 栅格向右移动
+    .col-pull-{i}    // 栅格向右移动
         right $percent
 
 for k, v in $screen    // 遍历各种屏幕
@@ -37,6 +36,7 @@ for k, v in $screen    // 遍历各种屏幕
             $percent = col-percent(i)
             if i!=0
                 .col-{k}-{i}
+                    float left
                     width $percent
             .col-offset-{k}-{i}
                 margin-left $percent
@@ -49,5 +49,4 @@ for k, v in $screen    // 遍历各种屏幕
 
 {cols}    // 所有的列公用的样式
     position relative
-    float left
     min-height 1px
