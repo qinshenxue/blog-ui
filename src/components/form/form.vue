@@ -5,7 +5,14 @@
 </template>
 <script>
     export default{
-        name: 'v-form'
+        name: 'v-form',
+        methods:{
+
+            isValid(){
+
+                console.log(this.$children)
+            }
+        }
     }
 </script>
 <style lang="stylus">

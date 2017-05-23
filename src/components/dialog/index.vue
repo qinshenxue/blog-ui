@@ -28,10 +28,12 @@
         methods: {
             handelConfirm () {
                 //this.visible = false;
-                this.$emit('update:visible', false)
+                this.$emit('update:visible', false);
+                this.$emit('confirm')
             },
             handleCancel () {
-                this.$emit('update:visible', false)
+                this.$emit('update:visible', false);
+                this.$emit('cancel')
             }
         }
     }

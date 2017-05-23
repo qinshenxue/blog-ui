@@ -30,8 +30,8 @@
                 </v-col>
             </v-row>
         </div>
-        <v-dialog :visible.sync="dialogVisible" title="登录">
-            <v-form>
+        <v-dialog :visible.sync="dialogVisible" title="登录" @confirm="handleLogin">
+            <v-form ref="loginForm">
                 <v-form-item>
                     <v-input placeholder="用户名" v-model="form.username" :validations="['required']"></v-input>
                 </v-form-item>
@@ -123,6 +123,9 @@
                 this.$dialog({
                     content: 'show'
                 })
+            },
+            handleLogin(){
+                console.log(this.$refs.loginForm.isValid())
             }
         }
     }
