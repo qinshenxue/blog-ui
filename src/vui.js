@@ -9,6 +9,8 @@ import inputGroup from './components/input-group/index.vue';
 import select from './components/select/index.vue';
 import checkbox from './components/checkbox/index.vue';
 import radio from './components/radio/index.vue';
+import form from './components/form/form.vue';
+import formItem from './components/form/form-item.vue';
 
 
 import pagination from './components/pagination/index.vue';
@@ -21,8 +23,9 @@ import topbar from './components/topbar/index.vue';
 // import pagination from './pagination/pagination.vue';
 // import tree from './tree/tree.vue';
 
-// import dialog from './dialog/vui-dialog.vue';
-// import Dialog from './dialog/dialog';
+import dialog from './components/dialog/index.vue';
+
+import Dialog from './components/dialog';
 
 import clickoutside from './directives/clickoutside';
 import preview from './directives/preview';
@@ -34,13 +37,14 @@ const vui = {
     icon,
     input,
     inputGroup,
+    form, formItem,
     select,
     checkbox,
     radio,
     pagination,
     portal,
     upload,
-    topbar
+    topbar, dialog
 };
 
 const install = function (Vue) {
@@ -57,12 +61,18 @@ const install = function (Vue) {
     Vue.component(select.name, select);
     Vue.component('VuiCheckbox', checkbox);
     Vue.component('VuiRadio', radio);
+    Vue.component(form.name, form);
+    Vue.component(formItem.name, formItem);
+
 
     Vue.component('VuiPagination', pagination);
     Vue.component(portal.name, portal);
     Vue.component(upload.name, upload);
     Vue.component(comment.name, comment);
     Vue.component(topbar.name, topbar);
+
+    Vue.component(dialog.name, dialog);
+
 
     //   Vue.component('VuiPagination', pagination);
     //    Vue.component('VuiTree', tree);
@@ -76,7 +86,7 @@ const install = function (Vue) {
      Vue.prototype.$Modal = Modal;
      Vue.prototype.$Notice = Notice;*/
 
-    //  Vue.prototype.$dialog = Dialog;
+    Vue.prototype.$dialog = Dialog;
 
 };
 

@@ -19,29 +19,6 @@
 
     </div>
 </template>
-<style lang="less">
-    @import "../css/vars";
-
-    .view-comp-icon {
-
-        .col-1 {
-            text-align: center;
-            font-size: 12px;
-        }
-        .name {
-        }
-        .icon {
-            fill: @theme;
-            width: 32px;
-            height: 32px;
-            transition: 200ms;
-            &:hover {
-                transform: scale(2);
-            }
-        }
-
-    }
-</style>
 <script type="text/javascript">
     export default{
         data(){

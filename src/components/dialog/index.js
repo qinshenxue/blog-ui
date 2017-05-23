@@ -1,9 +1,8 @@
-
 import  Vue from 'vue';
-import  VuiDialog from './dialog.vue';
+import  vDialog from './dialog.vue';
 
 
-var DialogConstructor = Vue.extend(VuiDialog);
+var DialogConstructor = Vue.extend(vDialog);
 var instance;
 function Dialog(options) {
     if (!instance) {

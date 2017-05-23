@@ -1,0 +1,10 @@
+.v-article
+  padding 0 15px
+  background #fff
+  overflow hidden
+
+for k, v in $screen    // 遍历各种屏幕
+  @media (min-width v['min-width'])
+    .v-article
+      padding v['article-padding']
+

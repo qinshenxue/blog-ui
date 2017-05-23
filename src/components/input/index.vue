@@ -18,23 +18,29 @@
         <div class="v-input_icon" v-if="$slots.icon">
             <slot name="icon"></slot>
         </div>
+        <div class="v-input_error" v-if="!isValid && invalidMsg">{{invalidMsg}}</div>
         <input v-if="type!=='textarea'"
                class="v-input_inner"
                ref="input"
-               type="text"
+               :type="type"
                :value="currentValue"
                v-bind="$props"
-               @input="handleInput">
+               @input="handleInput"
+               @blur="handleBlur"
+        >
         <textarea v-else
                   class="v-input_inner"
                   ref="input"
                   :value="currentValue"
                   v-bind="$props"
-                  @input="handleInput"></textarea>
+                  @input="handleInput"
+                  @blur="handleBlur"
+        ></textarea>
     </div>
 
 </template>
 <script>
+    import validations from './validations'
     export default{
         name: 'v-input',
         props: {
@@ -42,6 +48,7 @@
                 type: String,
                 default: 'text'
             },
+            validations: Array,
             value: [String, Number],
             placeholder: String,
             disabled: Boolean,
@@ -54,7 +61,9 @@
         },
         data(){
             return {
-                currentValue: this.value
+                currentValue: this.value,
+                isValid: true,
+                invalidMsg: ''
             }
         },
         watch: {
@@ -71,7 +80,35 @@
                         this.$refs.input.value = v;
                         break;
                 }
+                this.invalidMsg = '';
                 this.$emit('input', v);
+            },
+            handleBlur(e){
+                if (this.minlength && this.currentValue.length < this.minlength) {
+                    this.isValid = false
+                    this.invalidMsg = `至少输入${this.minlength}个字符`;
+                    return
+                }
+                if (this.maxlength && this.currentValue.length > this.maxlength) {
+                    this.isValid = false
+                    this.invalidMsg = `最多输入${this.minlength}个字符`;
+                    return
+                }
+
+                if (this.validations) {
+                    this.isValid = this.validations.every(item => {
+                        var valid;
+                        if (typeof item === 'string') {
+                            valid = validations[item](this.currentValue);
+                        } else if (typeof item === 'function') {
+                            valid = item(this.currentValue);
+                        }
+                        if (!valid.isValid) {
+                            this.invalidMsg = valid.invalidMsg;
+                        }
+                        return valid.isValid
+                    })
+                }
             }
         }
     }
@@ -91,6 +128,18 @@
         appearance none
         &:focus
             border-color $color-theme
+
+    .v-input_error
+        position absolute
+        right 1px
+        top 1px
+        bottom 1px
+        text-align right
+        display flex
+        align-items center
+        padding 0 10px
+        background #ffffff
+        color $color-danger
 
     .is-disabled .v-input_inner
         background-color $color-gray-light

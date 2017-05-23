@@ -12,7 +12,7 @@
                     <div class="v-comment_author">{{comment.author}} <span class="v-comment_time">{{comment.create_time}}</span>
                     </div>
                 </div>
-                <div class="v-comment_body">{{comment.content}}</div>
+                <div class="v-comment_body"><span v-if="comment.reply">回复<em class="v-comment_reply">{{comment.reply}}</em>：</span>{{comment.content}}</div>
                 <div class="v-comment_foot"><a href="javascript:;" @click="reply=comment">回复</a>
                     <v-comment-form enable-cancel
                                     v-if="reply && comment.id==reply.id"
@@ -69,6 +69,9 @@
 
     .v-comment_author
         margin-left 10px
+        color $color-theme
+    .v-comment_reply
+        font-style normal
         color $color-theme
 
     .v-comment_time

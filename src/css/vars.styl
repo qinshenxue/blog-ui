@@ -4,33 +4,33 @@ $color-theme-light = lighten($color-theme, 20%)
 $color-theme-dark = darken($color-theme, 10%)
 // 辅助色
 $color-success = #0b5
-$color-success-light=lighten($color-success,10%)
-$color-success-dark=darken($color-success,10%)
+$color-success-light = lighten($color-success, 10%)
+$color-success-dark = darken($color-success, 10%)
 
 $color-warning = #f90
-$color-warning-light =lighten($color-warning,10%)
-$color-warning-dark =darken($color-warning,10%)
+$color-warning-light = lighten($color-warning, 10%)
+$color-warning-dark = darken($color-warning, 10%)
 
 $color-danger = #d55
-$color-danger-light=lighten($color-danger,10%)
-$color-danger-dark=darken($color-danger,10%)
+$color-danger-light = lighten($color-danger, 10%)
+$color-danger-dark = darken($color-danger, 10%)
 
-$color-title= lighten(#000,20%) // #333
-$color-body=  lighten(#000,40%)  // #666
-$color-assist= lighten(#000,60%) // #999
+$color-title = lighten(#000, 20%) // #333
+$color-body = lighten(#000, 40%) // #666
+$color-assist = lighten(#000, 60%) // #999
 
 // 默认按钮的边框、按钮disabled边框
-$color-gray =#ccc
+$color-gray = #ccc
 // 默认按钮hover
-$color-gray-light =#eee
+$color-gray-light = #eee
 // 默认按钮active、按钮disabled背景
-$color-gray-dark =#ddd
+$color-gray-dark = #ddd
 $color-disabled = #bbb
 
 $color-border = #e5e5e5
 
 // form 控件边框颜色
-$color-border-control= $color-gray
+$color-border-control = $color-gray
 
 // 正文字体
 $font-family-body = "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
@@ -45,28 +45,32 @@ $font-size-assist = 12px
 // 正文行高，比例为20/14=1.428571
 $line-height-body = unit(round(20 / $font-size-body, 8), '')
 
-$font-size-h1=34px
-$font-size-h2=28px
-$font-size-h3=22px
-$font-size-h4=18px
-$font-size-h5=16px
-$font-size-h6=14px
-
+$font-size-h1 = 34px
+$font-size-h2 = 28px
+$font-size-h3 = 22px
+$font-size-h4 = 18px
+$font-size-h5 = 16px
+$font-size-h6 = 14px
 
 // 定义各种屏幕的尺寸，以及当前尺寸下container的宽度
+// article-padding 文章间距
 $screen = {
     sm:{
         min-width:768px,
         container-width:720px
+        article-padding: 0 20px
     },
     md:{
         min-width:992px,
-        container-width:960px
+        container-width:960px,
+        article-padding:0 50px
     },
     lg:{
         min-width:1200px,
-        container-width:1080px
+        container-width:1080px,
+        article-padding:0 100px
     }
 }
 // 栅格列数
 $grid-columns = 24
+

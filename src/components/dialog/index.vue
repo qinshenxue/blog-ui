@@ -1,0 +1,100 @@
+<template>
+    <div class="v-dialog-wrapper" v-show="visible">
+        <transition name="fade">
+            <div class="v-dialog_mask" v-show="visible" @click="handleCancel"></div>
+        </transition>
+        <transition name="pop">
+            <div class="v-dialog" v-show="visible">
+                <div class="v-dialog_head">{{title}}</div>
+                <div class="v-dialog_body">
+                    <slot></slot>
+                </div>
+                <div class="v-dialog_foot">
+                    <v-btn type="primary"
+                           @click.native="handelConfirm">确认
+                    </v-btn>
+                </div>
+            </div>
+        </transition>
+    </div>
+</template>
+<script type="text/javascript">
+    export default{
+        name: 'v-dialog',
+        props: {
+            title: String,
+            visible: Boolean
+        },
+        methods: {
+            handelConfirm () {
+                //this.visible = false;
+                this.$emit('update:visible', false)
+            },
+            handleCancel () {
+                this.$emit('update:visible', false)
+            }
+        }
+    }
+</script>
+<style lang="stylus">
+    @import "../../css/vars.styl"
+    .v-dialog-wrapper
+        position: fixed;
+        top 0
+        left 0
+        bottom 0
+        right 0
+        z-index 999
+        display flex
+        justify-content center
+        flex-direction column
+
+    .v-dialog_mask
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, .65);
+        z-index: 0;
+        transition: 200ms;
+
+    .v-dialog
+        width: 400px;
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, .2) 0 0 50px 10px;
+        z-index: 9999;
+        transition: 200ms;
+        margin-right auto
+        margin-left auto
+
+    .v-dialog_body
+    .v-dialog_head
+    .v-dialog_foot
+        padding: 30px;
+
+    .v-dialog_head
+        font-size $font-size-title
+        text-align center
+        color: #fff
+        background $color-theme
+
+    .v-dialog_body
+        color: #333;
+
+    .v-dialog_foot
+        padding-top 0
+        .v-btn
+            width 100%
+
+    .fade-enter
+    .fade-leave-active
+        opacity: 0
+
+    .pop-enter
+        opacity: 0
+        transform: scale(0.8)
+
+    .pop-leave-active
+        opacity: 0
+</style>
