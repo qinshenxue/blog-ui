@@ -43,6 +43,7 @@
     import validations from './validations'
     export default{
         name: 'v-input',
+        form: true,
         props: {
             type: {
                 type: String,
@@ -84,18 +85,16 @@
                 this.$emit('input', v);
             },
             handleBlur(e){
+                this.validate();
+            },
+            validate(){
                 if (this.minlength && this.currentValue.length < this.minlength) {
                     this.isValid = false
                     this.invalidMsg = `至少输入${this.minlength}个字符`;
-                    return
-                }
-                if (this.maxlength && this.currentValue.length > this.maxlength) {
+                } else if (this.maxlength && this.currentValue.length > this.maxlength) {
                     this.isValid = false
                     this.invalidMsg = `最多输入${this.minlength}个字符`;
-                    return
-                }
-
-                if (this.validations) {
+                } else if (this.validations) {
                     this.isValid = this.validations.every(item => {
                         var valid;
                         if (typeof item === 'string') {
@@ -109,6 +108,7 @@
                         return valid.isValid
                     })
                 }
+                return this.isValid
             }
         }
     }
