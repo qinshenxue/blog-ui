@@ -50,4 +50,7 @@
         width: 1%;
         position: relative;
         white-space: nowrap;
+    .v-input-group_append
+        .v-btn
+            border-left 0
 </style>
