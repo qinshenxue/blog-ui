@@ -1,7 +1,10 @@
 <template>
-    <svg class="icon" :class="['icon-'+name]" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <path :d="path"></path>
-    </svg>
+    <i class="v-icon" :class="['v-icon-'+name]">
+        <svg class="v-icon_svg" viewBox="0 0 1024 1024" version="1.1"
+             xmlns="http://www.w3.org/2000/svg">
+            <path :d="path"></path>
+        </svg>
+    </i>
 </template>
 
 <script type="text/javascript">
@@ -32,7 +35,7 @@
     }
 </script>
 <style lang="stylus">
-    .icon
+    .v-icon_svg
         width 16px
         height @width
 </style>

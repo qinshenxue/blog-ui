@@ -5,7 +5,9 @@
         </transition>
         <transition name="pop">
             <div class="v-dialog" v-show="visible">
-                <div class="v-dialog_head">{{title}}</div>
+                <div class="v-dialog_head">{{title}}
+                    <v-icon class="v-dialog_close" name="close" @click.native="handleCancel"></v-icon>
+                </div>
                 <div class="v-dialog_body">
                     <slot></slot>
                 </div>
@@ -28,7 +30,7 @@
         methods: {
             handelConfirm () {
                 //this.visible = false;
-                this.$emit('update:visible', false);
+                //this.$emit('update:visible', false);
                 this.$emit('confirm')
             },
             handleCancel () {
@@ -76,10 +78,24 @@
         padding: 30px;
 
     .v-dialog_head
+        position relative
         font-size $font-size-title
         text-align center
         color: #fff
         background $color-theme
+
+    .v-dialog_close
+        position absolute
+        top 0
+        right 0
+        width 30px
+        height 30px
+        border-bottom-left-radius 30px
+        background rgba(#fff, 20%)
+        padding 3px 0 0 7px
+        cursor pointer
+        .v-icon_svg
+            fill #fff
 
     .v-dialog_body
         color: #333;

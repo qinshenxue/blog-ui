@@ -18,7 +18,6 @@
         <div class="v-input_icon" v-if="$slots.icon">
             <slot name="icon"></slot>
         </div>
-        <div class="v-input_error" v-if="!isValid && invalidMsg">{{invalidMsg}}</div>
         <input v-if="type!=='textarea'"
                class="v-input_inner"
                ref="input"
@@ -40,31 +39,27 @@
 
 </template>
 <script>
-    import validations from './validations'
+    import emitter from '../../mixins/emitter'
     export default{
         name: 'v-input',
-        form: true,
+        mixins: [emitter],
         props: {
             type: {
                 type: String,
                 default: 'text'
             },
-            validations: Array,
             value: [String, Number],
             placeholder: String,
             disabled: Boolean,
             readonly: Boolean,
             autofocus: Boolean,
             autocomplete: Boolean,
-            minlength: Number,
             maxlength: Number,
             rows: Number
         },
         data(){
             return {
-                currentValue: this.value,
-                isValid: true,
-                invalidMsg: ''
+                currentValue: this.value
             }
         },
         watch: {
@@ -73,6 +68,9 @@
             }
         },
         methods: {
+            dispatchFormItem(eventName){
+                this.dispatch('v-form-item', eventName, this.currentValue);
+            },
             handleInput(e){
                 let v = e.target.value;
                 switch (this.type) {
@@ -81,35 +79,15 @@
                         this.$refs.input.value = v;
                         break;
                 }
-                this.invalidMsg = '';
                 this.$emit('input', v);
+                this.dispatchFormItem('input');
             },
             handleBlur(e){
-                this.validate();
-            },
-            validate(){
-                if (this.minlength && this.currentValue.length < this.minlength) {
-                    this.isValid = false
-                    this.invalidMsg = `至少输入${this.minlength}个字符`;
-                } else if (this.maxlength && this.currentValue.length > this.maxlength) {
-                    this.isValid = false
-                    this.invalidMsg = `最多输入${this.minlength}个字符`;
-                } else if (this.validations) {
-                    this.isValid = this.validations.every(item => {
-                        var valid;
-                        if (typeof item === 'string') {
-                            valid = validations[item](this.currentValue);
-                        } else if (typeof item === 'function') {
-                            valid = item(this.currentValue);
-                        }
-                        if (!valid.isValid) {
-                            this.invalidMsg = valid.invalidMsg;
-                        }
-                        return valid.isValid
-                    })
-                }
-                return this.isValid
+                this.dispatchFormItem('blur');
             }
+        },
+        created(){
+            this.dispatchFormItem('input');
         }
     }
 </script>
@@ -128,18 +106,6 @@
         appearance none
         &:focus
             border-color $color-theme
-
-    .v-input_error
-        position absolute
-        right 1px
-        top 1px
-        bottom 1px
-        text-align right
-        display flex
-        align-items center
-        padding 0 10px
-        background #ffffff
-        color $color-danger
 
     .is-disabled .v-input_inner
         background-color $color-gray-light

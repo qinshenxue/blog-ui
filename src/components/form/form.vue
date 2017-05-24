@@ -6,12 +6,26 @@
 <script>
     export default{
         name: 'v-form',
-        methods:{
+        data(){
+            return {
+                fields: []
+            }
+        },
+        methods: {
 
             isValid(){
-
-                console.log(this.$children)
+                return this.fields.every(field => field.validate());
+                // console.log(this.$children)
             }
+        },
+        created(){
+
+            this.$on('regist', (item) => {
+                this.fields.push(item);
+            });
+            /*  this.$on('removefield', item => {
+             this.fields.splice(this.fields.indexOf(item), 1);
+             })*/
         }
     }
 </script>
