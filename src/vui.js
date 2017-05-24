@@ -29,7 +29,7 @@ import dialog from './components/dialog/index.vue';
 import Dialog from './components/dialog';
 
 import clickoutside from './directives/clickoutside';
-import preview from './directives/preview';
+//import preview from './directives/preview';
 
 
 
@@ -83,7 +83,7 @@ const install = function (Vue) {
     //   Vue.component('VuiDialog', dialog);
 
     Vue.directive('clickoutside', clickoutside);
-    Vue.directive('preview', preview);
+   // Vue.directive('preview', preview);
 
     /* Vue.prototype.$Loading = LoadingBar;
      Vue.prototype.$Message = Message;

@@ -1,6 +1,10 @@
 <template>
     <div class="vui-doc">
         <v-topbar>
+            <template slot="logo">
+                <img src="../images/vue.png" alt="logo">
+                UI for BLOG
+            </template>
             <template slot="links">
                 <router-link to="/basic/color">组件</router-link>
                 <router-link :to="{path:'/article',query:{full:1}}">文章</router-link>

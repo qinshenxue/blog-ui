@@ -3,8 +3,7 @@
         <div class="container">
             <div class="v-topbar_left">
                 <div class="v-topbar_logo">
-                    <img src="../../images/vue.png" alt="logo">
-                    UI for BLOG
+                    <slot name="logo"></slot>
                 </div>
             </div>
             <div class="v-topbar_right">
@@ -23,7 +22,7 @@
 <style lang="stylus">
     @import "../../css/vars.styl"
     .v-topbar
-        background #f4f4f4
+        background #fff
         height 100%
         .container
             display flex
