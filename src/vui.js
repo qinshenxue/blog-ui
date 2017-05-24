@@ -19,6 +19,7 @@ import upload from './components/upload/index.vue';
 
 import comment from './components/comment/index.vue';
 import topbar from './components/topbar/index.vue';
+import dropdown from './components/dropdown/index.vue';
 
 // import pagination from './pagination/pagination.vue';
 // import tree from './tree/tree.vue';
@@ -29,6 +30,8 @@ import Dialog from './components/dialog';
 
 import clickoutside from './directives/clickoutside';
 import preview from './directives/preview';
+
+
 
 const vui = {
     row,
@@ -63,6 +66,7 @@ const install = function (Vue) {
     Vue.component('VuiRadio', radio);
     Vue.component(form.name, form);
     Vue.component(formItem.name, formItem);
+    Vue.component(dropdown.name, dropdown);
 
 
     Vue.component('VuiPagination', pagination);

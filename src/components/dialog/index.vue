@@ -1,24 +1,23 @@
 <template>
-    <div class="v-dialog-wrapper" v-show="visible">
-        <transition name="fade">
-            <div class="v-dialog_mask" v-show="visible" @click="handleCancel"></div>
-        </transition>
-        <transition name="pop">
-            <div class="v-dialog" v-show="visible">
-                <div class="v-dialog_head">{{title}}
-                    <v-icon class="v-dialog_close" name="close" @click.native="handleCancel"></v-icon>
+    <transition name="fade">
+        <div class="v-dialog-wrapper" v-show="visible">
+            <transition name="pop">
+                <div class="v-dialog" v-show="visible">
+                    <div class="v-dialog_head">{{title}}
+                        <v-icon class="v-dialog_close" name="close" @click.native="handleCancel"></v-icon>
+                    </div>
+                    <div class="v-dialog_body">
+                        <slot></slot>
+                    </div>
+                    <div class="v-dialog_foot">
+                        <v-btn type="primary"
+                               @click.native="handelConfirm">确认
+                        </v-btn>
+                    </div>
                 </div>
-                <div class="v-dialog_body">
-                    <slot></slot>
-                </div>
-                <div class="v-dialog_foot">
-                    <v-btn type="primary"
-                           @click.native="handelConfirm">确认
-                    </v-btn>
-                </div>
-            </div>
-        </transition>
-    </div>
+            </transition>
+        </div>
+    </transition>
 </template>
 <script type="text/javascript">
     export default{
@@ -52,23 +51,13 @@
         display flex
         justify-content center
         flex-direction column
-
-    .v-dialog_mask
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
         background: rgba(0, 0, 0, .65);
-        z-index: 0;
-        transition: 200ms;
 
     .v-dialog
         width: 400px;
         background: #fff;
         box-shadow: rgba(0, 0, 0, .2) 0 0 50px 10px;
         z-index: 9999;
-        transition: 200ms;
         margin-right auto
         margin-left auto
 
@@ -105,6 +94,12 @@
         .v-btn
             width 100%
 
+    .fade-enter-active
+    .fade-leave-active
+    .pop-enter-active
+    .pop-leave-active
+        transition all 0.2s
+
     .fade-enter
     .fade-leave-active
         opacity: 0
@@ -114,5 +109,6 @@
         transform: scale(0.8)
 
     .pop-leave-active
+        transform: scale(0.8)
         opacity: 0
 </style>

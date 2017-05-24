@@ -38,15 +38,21 @@
         align-items center
         height 100%
         a
+            text-decoration none
+        > *
             display flex
             align-items center
             height @height
             padding 0 15px
             margin 0 10px
-            text-decoration none
-            border-bottom 2px solid transparent
-            &.active
-                border-color $color-theme
+            position relative
+            &.active:after
+                position absolute
+                bottom 0
+                content ''
+                left 0
+                width 100%
+                border-bottom 2px solid $color-theme
 
     .v-topbar_logo
         display flex

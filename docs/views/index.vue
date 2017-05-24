@@ -5,10 +5,19 @@
                 <router-link to="/basic/color">组件</router-link>
                 <router-link :to="{path:'/article',query:{full:1}}">文章</router-link>
                 <a href="#">酷站</a>
+                <div>
+                    <v-dropdown><a href="javascript:;">Like</a>
+                        <ul slot="menu">
+                            <li>退出</li>
+                            <li>退出</li>
+                        </ul>
+                    </v-dropdown>
+                </div>
                 <div class="link-group">
                     <a href="javascript:;" @click="loginDialogVisible=true">登录</a><em class="dot"></em>
                     <a href="javascript:;" @click="registDialogVisible=true">注册</a>
                 </div>
+
             </template>
         </v-topbar>
         <div class="container doc-container">
@@ -45,17 +54,17 @@
         </v-dialog>
 
         <v-dialog :visible.sync="registDialogVisible" title="注册" @confirm="handleRegist">
-            <v-form ref="loginForm">
-                <v-form-item required>
+            <v-form ref="registForm">
+                <v-form-item required :minlength="2" :maxlength="10">
                     <v-input placeholder="用户名" v-model="registForm.username"></v-input>
                 </v-form-item>
-                <v-form-item required>
+                <v-form-item required :minlength="6" :maxlength="20">
                     <v-input placeholder="密码" v-model="registForm.password" type="password"></v-input>
                 </v-form-item>
                 <v-form-item required email>
                     <v-input placeholder="常用邮箱" v-model="registForm.email"></v-input>
                 </v-form-item>
-                <v-form-item required>
+                <v-form-item required :length="6">
                     <v-input-group>
                         <v-input placeholder="验证码" v-model="registForm.code"></v-input>
                         <v-btn slot="append">获取验证码</v-btn>
@@ -156,7 +165,7 @@
 
             },
             handleRegist(){
-
+                console.log(this.$refs.registForm.isValid())
             }
         }
     }
@@ -164,13 +173,8 @@
 <style lang="stylus">
     @import "../../src/css/vars.styl"
     .v-topbar_links .link-group
-
-        display flex
-        align-items center
-        margin: 0 10px;
-        a
-            padding 0
-            margin 0
+        margin-right 0
+        padding-right 0
 
     .dot
         display inline-block

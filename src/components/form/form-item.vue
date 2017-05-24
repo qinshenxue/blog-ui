@@ -12,8 +12,8 @@
         props: {
             rules: Array,
             required: Boolean,
-            minlenth: Number,
-            maxlenth: Number,
+            minlength: Number,
+            maxlength: Number,
             length: Number,
             email: Boolean
         },
@@ -33,7 +33,7 @@
                 var msg = '';
                 if (this.required && val.trim() === '') {
                     msg = "必填";
-                } else if (this.minlength && val.length < this.minlenght) {
+                } else if (this.minlength && val.length < this.minlength) {
                     msg = `长度不能小于${this.minlength}个字符`;
                 } else if (this.maxlength && val.length > this.maxlength) {
                     msg = `长度不能大于${this.maxlength}个字符`;
