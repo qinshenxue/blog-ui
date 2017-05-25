@@ -37,7 +37,10 @@
         align-items center
         height 100%
         a
+            color $color-body
             text-decoration none
+            &:hover
+                color $color-theme
         > *
             display flex
             align-items center
@@ -45,13 +48,15 @@
             padding 0 15px
             margin 0 10px
             position relative
-            &.active:after
-                position absolute
-                bottom 0
-                content ''
-                left 0
-                width 100%
-                border-bottom 2px solid $color-theme
+            &.active
+                color $color-theme
+                &:after
+                    position absolute
+                    bottom 0
+                    content ''
+                    left 0
+                    width 100%
+                    border-bottom 2px solid $color-theme
 
     .v-topbar_logo
         display flex

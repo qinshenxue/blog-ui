@@ -41,6 +41,15 @@
                     msg = `长度限制为${this.length}个字符`;
                 } else if (this.email && !this.emailReg.test(val)) {
                     msg = "邮箱不合法";
+                } else if (this.rules) {
+                    msg = '';
+                    valid = this.rules.every(rule => {
+                        var ruleResult = rule();
+                        if (!ruleResult.isValid) {
+                            msg = ruleResult.invalidMsg;
+                        }
+                        return ruleResult.isValid;
+                    });
                 } else {
                     valid = true;
                     msg = '';

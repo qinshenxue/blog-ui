@@ -20,16 +20,15 @@ import upload from './components/upload/index.vue';
 import comment from './components/comment/index.vue';
 import topbar from './components/topbar/index.vue';
 import dropdown from './components/dropdown/index.vue';
+import spinner from './components/spinner/index.vue';
 
-// import pagination from './pagination/pagination.vue';
-// import tree from './tree/tree.vue';
+import Toast from './components/toast'
 
 import dialog from './components/dialog/index.vue';
 
 import Dialog from './components/dialog';
 
 import clickoutside from './directives/clickoutside';
-//import preview from './directives/preview';
 
 
 
@@ -58,6 +57,7 @@ const install = function (Vue) {
     Vue.component(col.name, col);
     Vue.component(row.name, row);
     Vue.component(btn.name, btn);
+    Vue.component(spinner.name, spinner);
 
     Vue.component(input.name, input);
     Vue.component(inputGroup.name, inputGroup);
@@ -92,6 +92,11 @@ const install = function (Vue) {
 
     Vue.prototype.$dialog = Dialog;
 
+    Vue.prototype.$info = Toast.info;
+    Vue.prototype.$success = Toast.success;
+    Vue.prototype.$warning = Toast.warning;
+    Vue.prototype.$error = Toast.error;
+    Vue.prototype.$loading = Toast.loading;
 };
 
 // auto install

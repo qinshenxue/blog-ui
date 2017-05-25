@@ -1,11 +1,12 @@
 <template>
-    <button :type="submit?'submit':'button'" class="v-btn" :class="['v-btn_'+type,{'v-btn_sm':sm,'v-btn_lg':lg}]" :disabled="disabled">
+    <button :type="submit?'submit':'button'" class="v-btn" :class="['v-btn_'+type,{'v-btn_sm':sm,'v-btn_lg':lg}]"
+            :disabled="disabled">
         <slot></slot>
     </button>
 </template>
 <script type="text/javascript">
     export default {
-        name:'v-btn',
+        name: 'v-btn',
         props: {
             type: {
                 type: String,
@@ -13,8 +14,96 @@
             },
             lg: Boolean,
             sm: Boolean,
-            submit:Boolean,
+            submit: Boolean,
             disabled: Boolean
         }
     }
 </script>
+<style lang="stylus">
+    @import "../../css/vars.styl"
+    .v-btn
+        display inline-block
+        outline none
+        padding 9px 15px
+        cursor pointer
+        font-family inherit
+        font-size inherit
+        user-select none
+        border 1px solid $color-gray
+        background #fff
+        line-height 1
+        &:hover
+            background $color-gray-light
+        &:active
+            background $color-gray-dark
+        &[disabled]
+            background $color-disabled
+            color $color-assist
+            border-color $color-gray
+            cursor not-allowed
+            &:hover
+            &:active
+                @extend .v-btn[disabled]
+
+    .v-btn_loading
+        position relative
+        display inline-block
+        vertical-align middle
+        .v-spinner
+            position: absolute
+            top: -8px
+            width: 16px
+            left: -16px
+
+    .v-btn_primary
+    .v-btn_success
+    .v-btn_warning
+    .v-btn_danger
+        color #fff
+
+    .v-btn_primary
+        background $color-theme
+        border-color $color-theme
+        &:hover
+            background $color-theme-light
+            border-color $color-theme-light
+        &:active
+            background $color-theme-dark
+            border-color $color-theme-dark
+
+    .v-btn_success
+        background $color-success
+        border-color $color-success
+        &:hover
+            background $color-success-light
+            border-color $color-success-light
+        &:active
+            background $color-success-dark
+            border-color $color-success-dark
+
+    .v-btn_warning
+        background $color-warning
+        border-color $color-warning
+        &:hover
+            background $color-warning-light
+            border-color $color-warning-light
+        &:active
+            background $color-warning-dark
+            border-color $color-warning-dark
+
+    .v-btn_danger
+        background $color-danger
+        border-color $color-danger
+        &:hover
+            background $color-danger-light
+            border-color $color-danger-light
+        &:active
+            background $color-danger-dark
+            border-color $color-danger-dark
+
+    .v-btn_sm
+        padding 6px 10px
+
+    .v-btn_lg
+        padding 12px 19px
+</style>

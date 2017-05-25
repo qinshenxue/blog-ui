@@ -4,13 +4,16 @@
             <transition name="pop">
                 <div class="v-dialog" v-show="visible">
                     <div class="v-dialog_head">{{title}}
-                        <v-icon class="v-dialog_close" name="close" @click.native="handleCancel"></v-icon>
+                        <div class="v-dialog_close" @click="handleCancel">
+                            <v-icon name="close"></v-icon>
+                        </div>
                     </div>
                     <div class="v-dialog_body">
                         <slot></slot>
                     </div>
                     <div class="v-dialog_foot">
                         <v-btn type="primary"
+                               ref="confirm"
                                @click.native="handelConfirm">确认
                         </v-btn>
                     </div>
@@ -83,7 +86,7 @@
         background rgba(#fff, 20%)
         padding 3px 0 0 7px
         cursor pointer
-        .v-icon_svg
+        .v-icon
             fill #fff
 
     .v-dialog_body

@@ -37,6 +37,7 @@
             padding 0 40px
             white-space nowrap
             border-bottom 1px solid #eee
+            cursor pointer
             &:last-child
                 border-bottom 0
 </style>
