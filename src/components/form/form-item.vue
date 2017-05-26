@@ -26,7 +26,10 @@
             }
         },
         methods: {
-
+            reset(){
+                this.isValid = true;
+                this.invalidMsg = '';
+            },
             validate(){
                 var val = this.value;
                 var valid = false;

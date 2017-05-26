@@ -1,7 +1,7 @@
 <template>
     <div class="v-comment_form">
         <div class="v-comment_form-body">
-            <v-input type="textarea" :rows="3" :placeholder="placeholder"></v-input>
+            <v-input type="textarea" :rows="3" :placeholder="placeholder" v-model="content"></v-input>
         </div>
         <div class="v-comment_form-foot">
             <v-btn v-if="enableCancel" @click.native="cancelComment">取消</v-btn>
@@ -25,10 +25,11 @@
         },
         methods: {
             cancelComment(){
+                this.content = '';
                 this.$emit('cancel');
             },
             submitComment(){
-                this.$emit('submit', this.content);
+                this.$emit('submit', this.content, this);
             }
         }
     }

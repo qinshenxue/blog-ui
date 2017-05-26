@@ -1,0 +1,49 @@
+
+.v-toast
+  position fixed
+  padding 20px 40px
+  border-radius 5px
+  top 50%
+  left 50%
+  transform translate(-50%, -50%)
+  z-index 1000
+  background rgba(#000, .7)
+  white-space nowrap
+  color #fff
+  cursor pointer
+  line-height 1
+  box-shadow rgba(0, 0, 0, .3) 0 0 20px
+  &.success
+    background $color-success
+
+  &.warning
+    background $color-warning
+
+  &.error
+    background $color-danger
+  &.loading
+    padding 20px
+    background rgba(#000, .5)
+    .v-spinner
+      width 24px
+
+  .icon-close
+    position absolute
+    fill #fff
+    top 50%
+    right 10px
+    width 14px
+    margin-top -7px
+  &.mobile
+    padding 10px 30px
+    background rgba(#000, .7)
+    .icon-close
+      display none
+
+.v-toast_cover
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  z-index 999

@@ -3,12 +3,12 @@ var webpack = require('webpack');
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, '../src/components/vui.js')
+        main: path.resolve(__dirname, '../src/vui.js')
     },
     output: {
         path: path.resolve(__dirname, '../static/'),
         filename: 'vui.min.js',
-        library: 'Vui',
+        library: 'vui',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },

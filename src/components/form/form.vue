@@ -16,6 +16,9 @@
             isValid(){
                 return this.fields.every(field => field.validate());
                 // console.log(this.$children)
+            },
+            reset(){
+                this.fields.forEach(field => field.reset());
             }
         },
         created(){

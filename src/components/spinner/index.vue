@@ -1,0 +1,40 @@
+<template>
+    <svg class="v-spinner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+        <defs>
+            <line id="l" x1="60" x2="60" y1="7" y2="27" :stroke="color" stroke-width="11" stroke-linecap="round"/>
+        </defs>
+        <g>
+            <use xlink:href="#l" opacity=".27"/>
+            <use xlink:href="#l" opacity=".27" transform="rotate(30 60,60)"/>
+            <use xlink:href="#l" opacity=".27" transform="rotate(60 60,60)"/>
+            <use xlink:href="#l" opacity=".27" transform="rotate(90 60,60)"/>
+            <use xlink:href="#l" opacity=".27" transform="rotate(120 60,60)"/>
+            <use xlink:href="#l" opacity=".27" transform="rotate(150 60,60)"/>
+            <use xlink:href="#l" opacity=".37" transform="rotate(180 60,60)"/>
+            <use xlink:href="#l" opacity=".46" transform="rotate(210 60,60)"/>
+            <use xlink:href="#l" opacity=".56" transform="rotate(240 60,60)"/>
+            <use xlink:href="#l" opacity=".66" transform="rotate(270 60,60)"/>
+            <use xlink:href="#l" opacity=".75" transform="rotate(300 60,60)"/>
+            <use xlink:href="#l" opacity=".85" transform="rotate(330 60,60)"/>
+        </g>
+    </svg>
+</template>
+<script>
+    export default{
+        name: 'v-spinner',
+        props: {
+            color: {
+                type: String,
+                default: '#000'
+            }
+        }
+    }
+</script>
+<style lang="stylus">
+    .v-spinner
+        width 16px
+        animation: spinner 1s steps(12, end) infinite;
+    @keyframes spinner
+        100%
+            transform rotate(360deg)
+</style>

@@ -7,15 +7,15 @@ import icon from './components/icon/index.vue';
 import input from './components/input/index.vue';
 import inputGroup from './components/input-group/index.vue';
 import select from './components/select/index.vue';
-import checkbox from './components/checkbox/index.vue';
-import radio from './components/radio/index.vue';
+//import checkbox from './components/checkbox/index.vue';
+//import radio from './components/radio/index.vue';
 import form from './components/form/form.vue';
 import formItem from './components/form/form-item.vue';
 
 
-import pagination from './components/pagination/index.vue';
-import portal from './components/portal/index.vue';
-import upload from './components/upload/index.vue';
+//import pagination from './components/pagination/index.vue';
+//import portal from './components/portal/index.vue';
+//import upload from './components/upload/index.vue';
 
 import comment from './components/comment/index.vue';
 import topbar from './components/topbar/index.vue';
@@ -41,11 +41,6 @@ const vui = {
     inputGroup,
     form, formItem,
     select,
-    checkbox,
-    radio,
-    pagination,
-    portal,
-    upload,
     topbar, dialog
 };
 
@@ -62,16 +57,16 @@ const install = function (Vue) {
     Vue.component(input.name, input);
     Vue.component(inputGroup.name, inputGroup);
     Vue.component(select.name, select);
-    Vue.component('VuiCheckbox', checkbox);
-    Vue.component('VuiRadio', radio);
+  ///  Vue.component('VuiCheckbox', checkbox);
+   // Vue.component('VuiRadio', radio);
     Vue.component(form.name, form);
     Vue.component(formItem.name, formItem);
     Vue.component(dropdown.name, dropdown);
 
 
-    Vue.component('VuiPagination', pagination);
-    Vue.component(portal.name, portal);
-    Vue.component(upload.name, upload);
+   // Vue.component('VuiPagination', pagination);
+  //  Vue.component(portal.name, portal);
+  //  Vue.component(upload.name, upload);
     Vue.component(comment.name, comment);
     Vue.component(topbar.name, topbar);
 
