@@ -30,11 +30,3 @@
         }
     }
 </script>
-<style lang="stylus">
-    .v-spinner
-        width 16px
-        animation: spinner 1s steps(12, end) infinite;
-    @keyframes spinner
-        100%
-            transform rotate(360deg)
-</style>

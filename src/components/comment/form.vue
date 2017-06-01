@@ -35,14 +35,3 @@
     }
 
 </script>
-
-<style lang="stylus">
-    .v-comment_form
-        margin 10px 0
-
-    .v-comment_form-foot
-        text-align right
-        padding-top 8px
-        .v-btn
-            margin-left 10px
-</style>

@@ -91,39 +91,3 @@
         }
     }
 </script>
-<style lang="stylus">
-    @import "../../css/vars.styl"
-    .v-input
-        position relative
-
-    .v-input_inner
-        display block
-        width 100%
-        outline none
-        padding 8px 10px
-        line-height 16px
-        border 1px solid $color-gray
-        appearance none
-        &:focus
-            border-color $color-theme
-
-    .is-disabled .v-input_inner
-        background-color $color-gray-light
-
-    .has-icon .v-input_inner
-        padding-right 34px
-
-    .v-input_icon
-        position absolute
-        right 0
-        top 0
-        width 34px
-        height 100%
-        text-align center
-        padding 9px
-        .icon
-            fill $color-assist
-        + .v-input_inner
-            padding-right 34px
-
-</style>

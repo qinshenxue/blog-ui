@@ -100,23 +100,3 @@
         }
     }
 </script>
-<style lang="stylus">
-    @import "../../css/vars.styl"
-    .v-form-item
-        position relative
-        margin-bottom 22px
-        &.has-error
-            .v-input_inner
-                border 1px solid $color-danger
-
-    .v-form-item_error
-        position absolute
-        bottom -20px
-        top 100%
-        line-height 1
-        font-size 12px
-        padding-left 1px
-        padding-top 4px
-        color $color-danger
-
-</style>

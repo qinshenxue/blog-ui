@@ -7,7 +7,8 @@
                 </div>
             </div>
             <div class="v-topbar_right">
-                <div class="v-topbar_links">
+                <v-icon name="more" @click.native="showSidebar"></v-icon>
+                <div class="v-topbar_links" ref="sidebar">
                     <slot name="links"></slot>
                 </div>
             </div>
@@ -16,52 +17,16 @@
 </template>
 <script>
     export default{
-        name: 'v-topbar'
+        name: 'v-topbar',
+        methods: {
+            showSidebar(){
+                var sidebar = this.$refs.sidebar;
+                if (getComputedStyle(sidebar).display !== 'none') {
+                    sidebar.style.display = 'none';
+                } else {
+                    sidebar.style.display = 'block';
+                }
+            }
+        }
     }
 </script>
-<style lang="stylus">
-    @import "../../css/vars.styl"
-    .v-topbar
-        background #fff
-        height 100%
-        .container
-            display flex
-            height @height
-
-    .v-topbar_left
-        display flex
-        flex 1
-
-    .v-topbar_links
-        display flex
-        align-items center
-        height 100%
-        a
-            color $color-body
-            text-decoration none
-            &:hover
-                color $color-theme
-        > *
-            display flex
-            align-items center
-            height @height
-            padding 0 15px
-            margin 0 10px
-            position relative
-            &.active
-                color $color-theme
-                &:after
-                    position absolute
-                    bottom 0
-                    content ''
-                    left 0
-                    width 100%
-                    border-bottom 2px solid $color-theme
-
-    .v-topbar_logo
-        display flex
-        align-items center
-        padding 0 20px
-        img
-            max-height 30px
-</style>

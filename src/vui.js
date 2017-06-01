@@ -30,7 +30,7 @@ import Dialog from './components/dialog';
 
 import clickoutside from './directives/clickoutside';
 
-
+import * as Utils from './utils'
 
 const vui = {
     row,
@@ -92,6 +92,7 @@ const install = function (Vue) {
     Vue.prototype.$warning = Toast.warning;
     Vue.prototype.$error = Toast.error;
     Vue.prototype.$loading = Toast.loading;
+    Vue.prototype.$utils = Utils;
 };
 
 // auto install

@@ -36,21 +36,3 @@
         }
     }
 </script>
-<style lang="stylus">
-    .v-input-group
-        width 100%
-        display: table
-        border-spacing 0
-        border-collapse collapse
-        > *
-            vertical-align middle
-            display table-cell
-    .v-input-group_prepend,
-    .v-input-group_append
-        width: 1%;
-        position: relative;
-        white-space: nowrap;
-    .v-input-group_append
-        .v-btn
-            border-left 0
-</style>
