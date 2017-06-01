@@ -6,11 +6,12 @@
                     <slot name="logo"></slot>
                 </div>
             </div>
-            <div class="v-topbar_right">
-                <v-icon name="more" @click.native="showSidebar"></v-icon>
-                <div class="v-topbar_links" ref="sidebar">
+            <div class="v-topbar_right" :class="{side:sideVisible}">
+                <v-icon name="more" @click.native="sideVisible=!sideVisible"></v-icon>
+                <div class="v-topbar_links">
                     <slot name="links"></slot>
                 </div>
+                <div class="v-topbar_right-cover"></div>
             </div>
         </div>
     </div>
@@ -18,13 +19,17 @@
 <script>
     export default{
         name: 'v-topbar',
-        methods: {
-            showSidebar(){
-                var sidebar = this.$refs.sidebar;
-                if (getComputedStyle(sidebar).display !== 'none') {
-                    sidebar.style.display = 'none';
+        data(){
+            return {
+                sideVisible: false
+            }
+        },
+        watch: {
+            sideVisible(v){
+                if (v) {
+                    document.body.style.overflow = 'hidden';
                 } else {
-                    sidebar.style.display = 'block';
+                    document.body.removeAttribute('style');
                 }
             }
         }
