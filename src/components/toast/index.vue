@@ -11,7 +11,6 @@
     </transition>
 </template>
 <script type="text/javascript">
-    import * as Util from '../../utils'
     export default{
         data () {
             return {
@@ -26,7 +25,7 @@
         computed: {
             cls(){
                 return [this.type, {
-                    mobile: Util.isAndroid || Util.isIOS
+                    mobile: this.$utils.isAndroid || this.$utils.isIOS
                 }]
             }
         },
@@ -34,9 +33,6 @@
             close () {
                 this.visible = false;
                 this.closed = true;
-                if (Util.isIE9) {
-                    this.afterLeave();
-                }
             },
             clearTimer () {
                 clearTimeout(this.timer);

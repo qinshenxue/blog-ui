@@ -65,6 +65,7 @@
         watch: {
             value (v) {
                 this.currentValue = v;
+                this.dispatchFormItem('input');
             }
         },
         methods: {
@@ -85,9 +86,6 @@
             handleBlur(e){
                 this.dispatchFormItem('blur');
             }
-        },
-        created(){
-            this.dispatchFormItem('input');
         }
     }
 </script>

@@ -1,7 +1,7 @@
 <template>
-    <div class="v-form">
+    <form autocomplete="off" class="v-form" @submit.prevent>
         <slot></slot>
-    </div>
+    </form>
 </template>
 <script>
     export default{

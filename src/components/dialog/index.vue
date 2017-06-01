@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <div class="v-dialog-wrapper" v-show="visible">
+        <div class="v-dialog-wrapper" v-show="visible" v-esc="handleCancel">
             <transition name="pop">
                 <div class="v-dialog" v-show="visible">
                     <div class="v-dialog_head">{{title}}
@@ -11,7 +11,7 @@
                     <div class="v-dialog_body">
                         <slot></slot>
                     </div>
-                    <div class="v-dialog_foot">
+                    <div class="v-dialog_foot" v-if="enableConfirm">
                         <v-btn type="primary"
                                ref="confirm"
                                @click.native="handelConfirm">确认
@@ -27,7 +27,11 @@
         name: 'v-dialog',
         props: {
             title: String,
-            visible: Boolean
+            visible: Boolean,
+            enableConfirm: {
+                type: Boolean,
+                default: true
+            }
         },
         methods: {
             handelConfirm () {

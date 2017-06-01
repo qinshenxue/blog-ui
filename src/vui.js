@@ -29,6 +29,7 @@ import dialog from './components/dialog/index.vue';
 import Dialog from './components/dialog';
 
 import clickoutside from './directives/clickoutside';
+import esc from './directives/esc';
 
 import * as Utils from './utils'
 
@@ -78,6 +79,7 @@ const install = function (Vue) {
     //   Vue.component('VuiDialog', dialog);
 
     Vue.directive('clickoutside', clickoutside);
+    Vue.directive('esc', esc);
    // Vue.directive('preview', preview);
 
     /* Vue.prototype.$Loading = LoadingBar;
