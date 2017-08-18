@@ -5,33 +5,38 @@
         </div>
         <div class="v-comment_form-foot">
             <v-btn v-if="enableCancel" @click.native="cancelComment">取消</v-btn>
-            <v-btn type="primary" @click.native="submitComment">提交</v-btn>
+            <v-btn v-if="enableSubmit" type="primary" @click.native="submitComment">提交</v-btn>
+            <slot name="form-foot"></slot>
         </div>
     </div>
 </template>
 
 <script>
 
-    export default{
-        name: 'v-comment-form',
-        props: {
-            enableCancel: Boolean,
-            placeholder: String
+export default {
+    name: 'v-comment-form',
+    props: {
+        enableSubmit: {
+            type: Boolean,
+            default: true
         },
-        data(){
-            return {
-                content: ''
-            }
+        enableCancel: Boolean,
+        placeholder: String
+    },
+    data() {
+        return {
+            content: ''
+        }
+    },
+    methods: {
+        cancelComment() {
+            this.content = '';
+            this.$emit('cancel');
         },
-        methods: {
-            cancelComment(){
-                this.content = '';
-                this.$emit('cancel');
-            },
-            submitComment(){
-                this.$emit('submit', this.content, this);
-            }
+        submitComment() {
+            this.$emit('submit', this.content, this);
         }
     }
+}
 
 </script>
