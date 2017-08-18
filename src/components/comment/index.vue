@@ -1,12 +1,14 @@
 <template>
     <div class="v-comment">
         <v-comment-form :placeholder="placeholder" v-if="!reply" @submit="submitComment" :enable-submit="enableSubmit">
-            <template slot="form-foot"><slot name="form-foot"></slot></template>
+            <template slot="form-foot">
+                <slot name="form-foot"></slot>
+            </template>
         </v-comment-form>
         <ul class="v-comment_list">
             <li class="v-comment_list-item" v-for="comment in data">
                 <div class="v-comment_head">
-                    <div class="v-comment_avatar" :style="getAvatar(comment)">{{comment.nick_name.substr(0, 1)}}</div>
+                    <div class="v-comment_avatar" :style="getAvatar(comment)">{{comment.avatar?'':comment.nick_name.substr(0, 1)}}</div>
                     <div class="v-comment_author">
                         <span class="v-comment_name">{{comment.nick_name}}</span>
                         <span v-if="comment.reply_to"> 回复
@@ -20,7 +22,9 @@
                 <div class="v-comment_foot">
                     <a href="javascript:;" @click="reply=comment">回复</a>
                     <v-comment-form enable-cancel v-if="reply && comment.id==reply.id" @cancel="reply=null" @submit="submitComment" :placeholder="placeholder" :enable-submit="enableSubmit">
-                        <template slot="form-foot"><slot name="form-foot"></slot></template>
+                        <template slot="form-foot">
+                            <slot name="form-foot"></slot>
+                        </template>
                     </v-comment-form>
                 </div>
             </li>
@@ -71,6 +75,12 @@ export default {
             }
         },
         getAvatar(comment) {
+            if (comment.avatar) {
+                return {
+                    backgroundColor: 'transparent',
+                    backgroundImage: `url("${comment.avatar}")`
+                }
+            }
             if (!this.colors[comment.nick_name]) {
                 this.colors[comment.nick_name] = this.colorHexToRGB('#' + Math.floor(Math.random() * 16777215).toString(16));
             }

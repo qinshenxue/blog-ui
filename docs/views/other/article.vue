@@ -85,6 +85,7 @@ export default {
                     "permission": 0
                 },
                 {
+                    "avatar":"https://avatars3.githubusercontent.com/u/10354498?v=4",
                     "id": 162,
                     "article_id": 71,
                     "content": "你test: '/\\.vue$/',写错了，test是正则表达式，不是字符串，另外vue和vue-router不能用require的方式了，入口JS的内容已经更新。",
@@ -98,6 +99,7 @@ export default {
                     "permission": 0
                 },
                 {
+                    "avatar":"https://avatars3.githubusercontent.com/u/10354498?v=4",
                     "id": 163,
                     "article_id": 71,
                     "content": "好吧，更新太快了，我自己本来还想用import方式写还怕不支持，多谢指点",
